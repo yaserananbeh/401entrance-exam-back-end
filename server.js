@@ -12,7 +12,7 @@ app.use(express.json())
 const {
     createFavorite,getFavorite,deleteFavorite,updateFavorite
 }=require('./controllers/crud.controller')
-mongoose.connect("mongodb://localhost:27017/drinks", { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true });
+mongoose.connect(`${process.env.MONGO_ATLAS_URL}`, { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true });
 
 
 app.get('/',(req,res)=>res.send('proof of live'))
